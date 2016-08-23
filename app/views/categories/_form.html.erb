@@ -25,6 +25,15 @@
     </div>
   </div>
 
+  <div class="form-group field checks">
+    <%= f.collection_check_boxes(:term_ids, Term.all, :id, :name) do |term| %>
+        <span>
+          <%= term.check_box %>
+          <%= term.label %>
+        </span>
+    <% end %>
+  </div>
+
   <div class="actions btn btn-default">
     <%= f.submit %>
   </div>

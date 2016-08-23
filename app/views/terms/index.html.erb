@@ -3,13 +3,14 @@
 <h1>Terms</h1>
 
 <div class="table-responsive">
-  <table class="table table-bordered table-condensed table-hover">
+  <table class="table table-bordered table-condensed table-hover text-center">
     <thead>
       <tr>
-        <th>Name</th>
-        <th>Definition</th>
-        <th>Author</th>
-        <th>Resource</th>
+        <th class="text-center">Name</th>
+        <th class="text-center">Definition</th>
+        <th class="text-center">Author</th>
+        <th class="text-center">Resource</th>
+        <th class="text-center">Associated Categories</th>
         <th colspan="3"></th>
       </tr>
     </thead>
@@ -17,11 +18,11 @@
     <tbody>
       <% @terms.each do |term| %>
         <tr>
-          <td><%= term.name %></td>
+          <td><%= link_to term.name, term %></td>
           <td><%= term.definition %></td>
           <td><%= term.author %></td>
           <td><%= term.resource %></td>
-          <td><%= link_to 'Show', term %></td>
+          <td><%= term.categories.count %></td>
           <td>
             <% if term.authorized?(current_user) %>
               <%= link_to edit_term_path(term) do %>

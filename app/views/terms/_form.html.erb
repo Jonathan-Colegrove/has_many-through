@@ -39,9 +39,12 @@
     </div>
   </div>
 
-  <div class="form-group field”>
+  <div class="form-group field checks">
     <%= f.collection_check_boxes(:category_ids, Category.all, :id, :name) do |category| %>
-          <%= category.label { category.check_box } %>
+        <span>
+          <%= category.check_box %>
+          <%= category.label %>
+        </span>
     <% end %>
   </div>
 
