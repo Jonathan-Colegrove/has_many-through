@@ -1,0 +1,116 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+ @import "bootstrap-sprockets";
+ @import "bootstrap";
+ @import "font-awesome";
+ @import "bootstrap-social";
+
+ body {
+   padding-top: 70px;
+   font-family: Baskerville, "Baskerville Old Face", Palatino, "Book Antiqua", Georgia, serif;
+   color: white;
+   background-color: black;
+    background-image: image-url("over_grass.jpg");
+    background-size: cover;
+  }
+
+ .navbar {
+    background-color: #266A2E;
+  }
+
+  .separator {
+    display: flex;
+    justify-content: space-between;
+  }
+
+ .table-hover > tbody > tr:hover {
+    background-color: #266A2E;
+  }
+
+.logo {
+  display: flex;
+  align-content: center;
+  align-items: center;
+}
+
+ //
+ //  header {
+ //    display: flex;
+ //    justify-content: space-between;
+ //  }
+ //
+ //  .most_recent {
+ //    margin-left: 2em;
+ //  }
+ //
+ //  .right_nav {
+ //    display: flex;
+ //    align-items: flex-start;
+ //  }
+ //
+ //  header input {
+ //    padding: 0;
+ //    line-height: 22px;
+ //    vertical-align: middle;
+ //  }
+ //
+ //  header input[type=text] {
+ //    background-color: transparent;
+ //    color: white;
+ //    border: none;
+ //  }
+ //
+ //  ::-webkit-input-placeholder {
+ //    color: #228B22;
+ //  }
+ //  :-ms-input-placeholder {
+ //    color: #228B22;
+ //  }
+ //  ::-moz-placeholder {
+ //    color: #228B22;
+ //  }
+ //  :-moz-placeholder {
+ //    color: #228B22;
+ //  }
+ //
+ //  h1 {
+ //    color: #228B22;
+ //    text-shadow: 2px 2px white;
+ //  }
+ //
+ // ul {
+ //    list-style: none;
+ //  }
+ //
+ //  label{
+ //      display:inline-block;
+ //      width:100px;
+ //  }
+ //
+ //  button {
+ //    background-color: #7FFF00;
+ //    border-radius: 15px;
+ //    border: 2px solid #228B22;
+ //  }
+ //
+ //  button a {
+ //    text-decoration: none;
+ //    color: white;
+ //  }
+ //
+ //  button:hover {
+ //    background-color: #228B22;
+ //  }
