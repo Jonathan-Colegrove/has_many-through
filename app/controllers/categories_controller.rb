@@ -1,5 +1,6 @@
 class CategoriesController < ApplicationController
   before_action :set_category, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate!, only: [:edit, :update, :destroy]
 
   # GET /categories
   # GET /categories.json
@@ -19,6 +20,10 @@ class CategoriesController < ApplicationController
 
   # GET /categories/1/edit
   def edit
+    unless @category.authorized?(current_user)
+      redirect_to @category, notice: "Sorry, please edit categories the normal way."
+      return
+    end
   end
 
   # POST /categories
@@ -40,6 +45,10 @@ class CategoriesController < ApplicationController
   # PATCH/PUT /categories/1
   # PATCH/PUT /categories/1.json
   def update
+    unless @category.authorized?(current_user)
+      redirect_to @category, notice: "Sorry, please update categories the normal way."
+      return
+    end
     respond_to do |format|
       if @category.update(category_params)
         format.html { redirect_to @category, notice: 'Category was successfully updated.' }
@@ -54,6 +63,10 @@ class CategoriesController < ApplicationController
   # DELETE /categories/1
   # DELETE /categories/1.json
   def destroy
+    unless @category.user == current_user
+      redirect_to @category, notice: "Sorry, please delete categories the normal way."
+      return
+    end
     @category.destroy
     respond_to do |format|
       format.html { redirect_to categories_url, notice: 'Category was successfully destroyed.' }
