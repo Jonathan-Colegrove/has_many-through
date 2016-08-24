@@ -1,4 +1,6 @@
 class Category < ApplicationRecord
+  belongs_to :user, optional: true
+  
   has_many :associations, dependent: :delete_all
   has_many :terms, through: :associations
 
